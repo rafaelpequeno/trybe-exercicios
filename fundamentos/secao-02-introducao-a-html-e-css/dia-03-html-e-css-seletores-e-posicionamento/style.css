@@ -1,18 +1,40 @@
-h1 {
+div:hover {
+  border: 6px solid black;
+}
+
+div:nth-of-type(1) {
+  color: red;
+}
+div:nth-of-type(2) {
+  color: orange;
+}
+div:nth-last-of-type(3) {
+  color: darkgreen;
+}
+div:nth-of-type(4) {
+  color: black;
+}
+div:nth-of-type(5) {
+  color: aqua;
+}
+
+div:nth-of-type(1) > h3 {
   text-align: center;
 }
-p {
-  text-align: center;
+div:nth-of-type(2) > h3 {
+  text-align: end;
 }
-li:hover {
-  background-color: coral;
+div:nth-of-type(3) >h3 {
+  text-align: justify;
+  font-size: 30px;
 }
-li:active {
- color: white; 
+div:nth-of-type(4) >h3 {
+  text-align: right;
 }
-li:active {
+div:nth-of-type(5) >h3 {
+  text-align: start;
+}
+
+div:nth-child(odd) h3 {
   font-style: italic;
-}
- .Lista {
-  list-style: none;
- }
+} 
