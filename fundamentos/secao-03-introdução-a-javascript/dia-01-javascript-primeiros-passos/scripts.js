@@ -48,14 +48,38 @@
 // console.log(retorno);
 
 
-const anguloA = 70;
-const anguloB = 60;
-const anguloC = 60;
-let triangulo;
+// const anguloA = 70;
+// const anguloB = 60;
+// const anguloC = 60;
+// let triangulo;
 
-if (anguloA + anguloB + anguloC === 180) {
-    triangulo = true;
-} else {
-    triangulo = false + ' Não é triangulo';
+// if (anguloA + anguloB + anguloC === 180) {
+//     triangulo = true;
+// } else {
+//     triangulo = false + ' Não é triangulo';
+// }
+// console.log(triangulo);
+
+peça = 'CAVALO'.toLowerCase
+let movimentos = '?'
+switch (peça) {
+    case 'peão':
+    movimentos = 'Somente para frente.';
+    break;
+    case 'bispo':
+        movimentos = 'Linha reta diagonalmente.';
+        break;
+    case 'torre':
+        movimentos = 'A torre se move em linha reta horizontalmente e verticalmente pelo número de casas não ocupadas.';
+        break;
+    case 'cavalo':
+        movimentos = 'Movimento em L.'
+        break;
+    case 'rainha':
+        movimentos = 'Qualquer numero de casas em linha reta em qualquer direção';
+        break;        
+    case 'rei':
+        movimentos = 'Uma casa vazia em qualquer direção';
 }
-console.log(triangulo);
+console.log(movimentos);
+
