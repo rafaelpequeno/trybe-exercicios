@@ -21,9 +21,23 @@ let array = ['java','css', 'javascript', 'python', 'html' ];
 //     }
 // }
 // console.log(bgWord)
-let smWord = ''
-for (let index = 0; index < array.length; index += 1)
-    if(smWord.length  < array[index].length) {
-        smWord = array[index]
+// let smWord = array[0]
+// for (let index = 0; index < array.length; index += 1)
+//     if( array[index].length < smWord.length  ) {
+//         smWord = array[index];
+//     }
+//     console.log(smWord);
+
+let maiorNumPrimo
+for (indexNumero = 2; indexNumero <= 50; indexNumero += 1) {
+    let numPrimo = true;
+    for (indexDivisor = 2; indexDivisor < indexNumero; indexDivisor += 1) {
+        if (indexNumero % indexDivisor === 0) {
+            numPrimo = false;
+        }
     }
-    console.log(smWord);
+if (numPrimo) {
+    maiorNumPrimo = indexNumero;
+}    
+}
+console.log(maiorNumPrimo);
