@@ -28,16 +28,48 @@ let array = ['java','css', 'javascript', 'python', 'html' ];
 //     }
 //     console.log(smWord);
 
-let maiorNumPrimo
-for (indexNumero = 2; indexNumero <= 50; indexNumero += 1) {
-    let numPrimo = true;
-    for (indexDivisor = 2; indexDivisor < indexNumero; indexDivisor += 1) {
-        if (indexNumero % indexDivisor === 0) {
-            numPrimo = false;
-        }
+// let maiorNumPrimo
+// for (indexNumero = 2; indexNumero <= 50; indexNumero += 1) {
+//     let numPrimo = true;
+//     for (indexDivisor = 2; indexDivisor < indexNumero; indexDivisor += 1) {
+//         if (indexNumero % indexDivisor === 0) {
+//             numPrimo = false;
+//         }
+//     }
+// if (numPrimo) {
+//     maiorNumPrimo = indexNumero;
+// }    
+// }
+// console.log(maiorNumPrimo);
+
+//**Bonus */
+
+let n = 5;
+let forma = '*'   
+let saidal = ''
+let saidac = n - 1;
+// for (index = 0; index < n; index += 1) {
+// saida = saida + forma;
+// };
+// for (index = 0; index < n; index += 1) {
+//     console.log(saida);
+// } 
+
+// for (index = 0; index <= n; index += 1) {
+//     console.log(saida);
+//     saida = saida + forma;
+// };
+
+
+for (indexl = 0; indexl <= n; indexl +=1) {
+for (let indexc = 0; indexc < n; indexc += 1) {
+    if (indexc < indexl) {
+        saidal = saidal + ' ';
+    } else {
+        saidal = saidal + forma;
     }
-if (numPrimo) {
-    maiorNumPrimo = indexNumero;
-}    
 }
-console.log(maiorNumPrimo);
+    console.log(saidal);
+    saidal = '';
+    saidac -= 1;
+}
