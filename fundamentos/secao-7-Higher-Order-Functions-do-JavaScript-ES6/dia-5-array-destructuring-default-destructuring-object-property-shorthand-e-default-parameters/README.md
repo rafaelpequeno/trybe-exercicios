@@ -1,0 +1,1 @@
+All i learned in this class is documented here: https://www.notion.so/README-7-5-6858985a1ba6407fba4292719a27193f?pvs=4
