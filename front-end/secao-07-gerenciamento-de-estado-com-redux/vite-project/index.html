@@ -3,103 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+    <title>App Trybe</title>
+    <script src="https://unpkg.com/redux@latest/dist/redux.js"></script>
     <style>
       body {
-        height: 100vh;
-        margin: 0;
-        padding: 0;
-      }
-
-      #container {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      button {
-        height: 50px;
-        width: 200px;
+        color: white;
+        background-color: #333;
+        font-family: sans-serif;
+        text-align: center;
       }
     </style>
   </head>
   <body>
-    <div id="container">
-      <p>Color: <span id="value">white</span></p>
-      <button id="previous">Previous color</button>
-      <button id="next">Next color</button>
-      <button id="random">Random Color</button>
+    <div class="container">
+      <h1>Minha Aplicação</h1>
+      <p>Status: Você está <span id="status">Offline</span></p>
+      <button id="toggle-theme">Light Mode</button>
+      <button id="toggle-status">Ficar Online</button>
     </div>
     <script>
       const INITIAL_STATE = {
-        colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
-        index: 0,
+        status: 'offline',
+        theme: 'dark',
       };
-      
-      function criarCor() {
-  const oneChar = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
-  let cor = '#';
-  const aleatorio = () => Math.floor(Math.random() * oneChar.length);
-  for (let i = 0; i < 6; i += 1) {
-      cor += oneChar[aleatorio()];
-  }
-  return cor;
-}
-      
+
       const reducer = (state = INITIAL_STATE, action) => {
-        switch(action.type) {
-          case 'NEXT_COLOR':
+        switch (action.type) {
+          case 'TOGGLE_THEME' :
             return {
               ...state,
-              index: state.index === state.colors.length - 1 ? 0 : state.index + 1
+              theme: state.theme === 'dark' ? 'light' : 'dark',
             };
-            case 'PREVIOUS_COLOR':
-              return {
-                ...state,
-                index: state.index === 0 ? state.colors.length -1 : state.index - 1
-              };
-              case 'RANDOM_COLOR' : 
-                return {
-                  ...state,
-                  colors: [...state.colors, criarCor()],
-                  index: state.colors.length
-                }
+          case 'TOGGLE_STATUS' :
+            return {
+              ...state,
+              status: state.status === 'offline' ? 'online' : 'offline',
+            };
           default:
-            return state
-          }
+            return state;
         }
-        
-        const store = Redux.createStore(reducer)
+      }
 
-        const btnPrevius = document.getElementById('previous');
+      const store = Redux.createStore(reducer);
 
-        const btnNext = document.getElementById('next');
+      const themeButton = document.getElementById('toggle-theme');
+      const statusButton = document.getElementById('toggle-status');
 
-        const btnRandom = document.getElementById('random')
+      themeButton.addEventListener('click', () => {
+        store.dispatch({type: 'TOGGLE_THEME'})
+      });
 
-        btnPrevius.addEventListener('click', () => {
+      statusButton.addEventListener('click', () => {
+        store.dispatch({type: 'TOGGLE_STATUS'})
+      });
 
-          store.dispatch({type: 'PREVIOUS_COLOR'})
-        })
+      store.subscribe(() => {
+        const state = store.getState();
+        const body = document.querySelector('body');
+        const status = document.getElementById('status');
 
-        btnNext.addEventListener('click', () => {
+        if (state.theme === 'light') {
+          themeButton.innerText = 'Dark Mode';
+          body.style.backgroundColor = '#fff';
+          body.style.color = '#333';
+        } else {
+          themeButton.innerText = 'Light Mode';
+          body.style.backgroundColor = '#333'
+          body.style.color = '#fff'
+        }
 
-          store.dispatch({type: 'NEXT_COLOR'})
-        })
-
-        btnRandom.addEventListener('click', () => {
-          store.dispatch({type: 'RANDOM_COLOR'})
-        })
-
-        store.subscribe(() => {
-          const { colors, index } = store.getState();
-
-          document.getElementById('value').innerHTML = colors[index]
-          document.getElementById('container').style.backgroundColor = colors[index]
-        })
+        if (state.status === 'online') {
+          statusButton.innerText = 'Ficar Offline';
+          status.innerText = 'Online';
+        } else {
+          statusButton.innerText = 'Ficar Online';
+          status.innerText = 'Offline';
+        }
+      })
 
     </script>
   </body>
