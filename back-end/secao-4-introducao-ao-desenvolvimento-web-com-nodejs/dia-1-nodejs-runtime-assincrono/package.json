@@ -1,0 +1,11 @@
+{
+  "name": "my-scripts",
+  "version": "1.0.0",
+  "description": "exercise 4.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rafael Pequeno",
+  "license": "ISC"
+}
