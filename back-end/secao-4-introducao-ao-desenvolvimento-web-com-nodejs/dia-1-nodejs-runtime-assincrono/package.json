@@ -2,10 +2,16 @@
   "name": "my-scripts",
   "version": "1.0.0",
   "description": "exercise 4.1",
-  "main": "index.js",
+  "main": "src/bmi.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "lint",
+    "start": "node ."
   },
   "author": "Rafael Pequeno",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint-config-trybe-backend": "^2.1.0",
+    "readline-sync": "^1.4.10"
+  }
 }
