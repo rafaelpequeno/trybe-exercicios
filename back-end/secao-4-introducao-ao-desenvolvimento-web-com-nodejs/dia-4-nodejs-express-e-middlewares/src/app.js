@@ -27,7 +27,7 @@ app.post('/signup', (req, res) => {
 });
 
 app.post('/activities',
-    auth, 
+    auth,
     validateName, 
     validatePrice, 
     validateDescription, 
