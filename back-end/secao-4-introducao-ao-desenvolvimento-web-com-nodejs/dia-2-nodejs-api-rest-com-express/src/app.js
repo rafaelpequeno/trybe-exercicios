@@ -7,7 +7,7 @@ app.listen(3001, () => console.log('Server running on port 3001'));
 
 
 app.get('/', async (req, res) => {
-    const data = await readJson();
+    const data = await readJson(); 
     res.json({ data })
 
 });
