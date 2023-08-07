@@ -1,0 +1,4 @@
+1- A arquitetura de software é importante para que o projeto se mantenha organizado independente do seu tamanho, de modo que várias pessoas possam trabalhar nele e ele se mantenha organizado, escalável, e de fácil manutenção.
+2- Os princípais objetivos da arquitetura de software são garantir a escalabilidade, robustez, performance e seguranção do sistema além de possibilitar futuras atualizações de forma simplificada e eficiente.
+3- O desafio principal é fazer a alteração sem comprometer o funcionamento da aplicação.
+4- Camada model é responsável pro armazenar, alterar e recuperar dados do sistema, ela é a camada mais próxima do banco de dados e é responsável por realizar as operações CRUD no banco de dados.
