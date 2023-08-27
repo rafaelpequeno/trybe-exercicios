@@ -1,0 +1,23 @@
+{
+  "name": "dia-1-interface-da-aplicacao-com-o-banco-de-dados",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint-config-trybe-backend": "^2.1.0",
+    "express": "4.18.2",
+    "mysql2": "3.6.0",
+    "nodemon": "^3.0.1",
+    "sequelize": "6.32.1"
+  },
+  "devDependencies": {
+    "sequelize-cli": "6.6.1"
+  }
+}
